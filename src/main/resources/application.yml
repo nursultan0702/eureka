@@ -1,0 +1,25 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/scloud
+    username: postgres
+    password: root
+  jpa:
+    generate-ddl: true
+
+spring.cloud.vault:
+    postgresql:
+        enabled: true
+        role: readonly
+        backend: postgresql
+        username-property: spring.datasource.username
+        password-property: spring.datasource.username
